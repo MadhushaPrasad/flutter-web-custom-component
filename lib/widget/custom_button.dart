@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  CustomButton({super.key, required this.btnLabel, required this.btnColor});
+
+  String btnLabel;
+  Color btnColor;
 
   @override
   Widget build(BuildContext context) {
@@ -12,19 +15,19 @@ class CustomButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Material(
-              color: Colors.red,
+              color: btnColor,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               child: InkWell(
                 onTap: () {
-                  print("Red Button");
+                  print("$btnLabel Clicked");
                 },
                 child: Container(
                   width: 200,
                   height: 80,
                   padding: const EdgeInsets.all(20),
-                  child: const Center(
-                    child: Text("Blue Button",
-                        style: TextStyle(
+                  child: Center(
+                    child: Text(btnLabel,
+                        style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w400)),
