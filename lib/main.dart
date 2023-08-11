@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwebcustomcomponent/widget/custom_button.dart';
+import 'package:flutterwebcustomcomponent/widget/custom_dropdown.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CustomButton(btnLabel: "Hello Button", btnColor: Colors.blue),
+      // home: CustomButton(btnLabel: "Hello Button", btnColor: Colors.blue),
+      home: Scaffold(
+        body: CustomDropDown(list: ["One", "Two", "Three"]),
+      ),
     );
   }
 }
